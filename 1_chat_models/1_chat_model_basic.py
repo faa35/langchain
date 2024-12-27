@@ -1,3 +1,5 @@
+# Chat Model Documents: https://python.langchain.com/v0.2/docs/integrations/chat/
+# OpenAI Chat Model Documents: https://python.langchain.com/v0.2/docs/integr
 from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAI
 from pydantic import SecretStr

@@ -244,7 +244,7 @@ Here's a breakdown of the folders and what you'll find in each:
 **1. Chat Models**
 
 - `1_chat_model_basic.py`
-just we are getting a response from the gogglegenAI
+  just we are getting a response from the gogglegenAI
 - `2_chat_model_basic_conversation.py`
 having a conversation
 - `3_chat_model_alternatives.py`

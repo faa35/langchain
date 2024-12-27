@@ -134,7 +134,37 @@ pip install python-dotenv
 pip install langchain
 ```
 
-1. 
+
+
+
+
+ 
+
+**We are gonna do it with env**
+
+
+```powershell
+PS D:\Fall 24\lang chain crash course\langchain-crash-course> python -v venv venvshawon
+
+```
+
+
+![Screenshot 2024-12-25 211116](https://github.com/user-attachments/assets/a3e23765-edfd-457b-a7eb-97b3a6b43696)
+
+```powershell
+pip install langchain langchain-google-genai python-dotenv
+```
+
+
+
+
+![Screenshot 2024-12-25 211527](https://github.com/user-attachments/assets/01153559-b8fb-4379-8cd8-aa7d0881bd56)
+
+
+
+
+
+
 
 **Repository Structure**
 

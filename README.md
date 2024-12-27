@@ -2,7 +2,8 @@ link: https://github.com/bhancockio/langchain-crash-course
 
 ***python version***
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/41100b6e-5d14-4248-b49d-7c635be43153/aa1b71ee-a5a3-41a7-8fb5-41f42cec4301/image.png)
+![Screenshot 2024-12-25 151555](https://github.com/user-attachments/assets/d0efcdd0-9410-43d2-bd6d-4bcab1d228ee)
+
 
 ```powershell
 C:\Users\User\AppData\Local\Programs\Python\Python312\Scripts\
@@ -44,7 +45,8 @@ py -m pip install --user pipx
 
 1. 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/41100b6e-5d14-4248-b49d-7c635be43153/66e60f91-fbf9-409e-8708-a814735c4e70/image.png)
+
+![Screenshot 2024-12-25 154539](https://github.com/user-attachments/assets/4aa52962-d819-41be-b5e2-76d574746baa)
 
 1. This command ensures that the `pipx` executable and other scripts are added to your system's PATH. Without it, the `pipx` command won't be recognized.
 

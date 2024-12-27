@@ -254,6 +254,28 @@ Here's a breakdown of the folders and what you'll find in each:
    couldn't figure out how to solve chat anthropic problem.
    so we are gonna skip it
 - `4_chat_model_conversation_with_user.py`
+  everytime we are putting the whole chat_history to Ai for a response
+```
+You: hi
+AI: Hi there! How can I help you today?
+
+You: who is newton (answer me in a single line)?
+AI: Sir Isaac Newton was a renowned physicist, mathematician, astronomer, alchemist, theologian, and author.
+
+You: exit
+
+
+
+---- Message History ----
+[
+    SystemMessage(content='You are a helpful AI assistant.'),
+    HumanMessage(content='hi'),
+    AIMessage(content='Hi there! How can I help you today?\n'),
+    HumanMessage(content='who is newton (answer me in a single line)?'),
+    AIMessage(content='Sir Isaac Newton was a renowned physicist, mathematician, astronomer, alchemist, theologian, and author.\n')
+]
+
+```
 - `5_chat_model_save_message_history_firestore.py`
 
 Learn how to interact with models like ChatGPT, Claude, and Gemini.

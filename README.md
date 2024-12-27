@@ -142,6 +142,14 @@ pip install langchain
 
 **We are gonna do it with env**
 
+Before using env, we are gonna read the https://python.langchain.com/v0.2/docs/integrations/chat/ to know about the ChatGoogleGenerativeAI. We are gonna click on that and gonna know about the installation and the setups
+
+```
+pip install langchain langchain-google-genai python-dotenv
+```
+here we are just installing google gen ai and dotenv as its required for .\1_chat_models\1_chat_model_basic.py 
+
+
 
 ```powershell
 PS D:\Fall 24\lang chain crash course\langchain-crash-course> python -v venv venvshawon

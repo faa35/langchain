@@ -1,8 +1,24 @@
-# LangChain Crash Course
+link: https://github.com/bhancockio/langchain-crash-course
+
+***python version***
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/41100b6e-5d14-4248-b49d-7c635be43153/aa1b71ee-a5a3-41a7-8fb5-41f42cec4301/image.png)
+
+```powershell
+C:\Users\User\AppData\Local\Programs\Python\Python312\Scripts\
+```
+
+```powershell
+C:\Users\User\AppData\Local\Programs\Python\Python312\
+```
+
+cloned with github desktop
+
+**LangChain Crash Course**
 
 Welcome to the LangChain Crash Course repository! This repo contains all the code examples you'll need to follow along with the LangChain Master Class for Beginners video. By the end of this course, you'll know how to use LangChain to create your own AI agents, build RAG chatbots, and automate tasks with AI.
 
-## Course Outline
+**Course Outline**
 
 1. **Setup Environment**
 2. **Chat Models**
@@ -11,54 +27,118 @@ Welcome to the LangChain Crash Course repository! This repo contains all the cod
 5. **RAG (Retrieval-Augmented Generation)**
 6. **Agents & Tools**
 
-## Getting Started
+**Getting Started**
 
-### Prerequisites
+**Prerequisites**
 
 - Python 3.10 or 3.11
-- Poetry (Follow this [Poetry installation tutorial](https://python-poetry.org/docs/#installation) to install Poetry on your system)
+- watch **pyproject.toml** to see all the dependencies
+- Poetry (Follow this [Poetry installation tutorial](https://python-poetry.org/docs/#installation) to install Poetry on your system)(dependency management tool for python)
+- install poetry(with pipx)
+1. first install pipx
 
-### Installation
+```powershell
+# If you installed python using Microsoft Store, replace `py` with `python3` in the next line.
+py -m pip install --user pipx
+```
 
-1. Clone the repository:
+1. 
 
-   ```bash
-   <!-- TODO: UPDATE TO MY  -->
-   git clone https://github.com/bhancockio/langchain-crash-course
-   cd langchain-crash-course
-   ```
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/41100b6e-5d14-4248-b49d-7c635be43153/66e60f91-fbf9-409e-8708-a814735c4e70/image.png)
 
+1. This command ensures that the `pipx` executable and other scripts are added to your system's PATH. Without it, the `pipx` command won't be recognized.
+
+```powershell
+python -m pipx ensurepath
+```
+
+1. Close the current terminal(also the VS Code and open a new one and run: ) 
+
+```powershell
+pipx --version
+```
+
+NOW LETS INSTALL POETRY
+
+```powershell
+pipx install poetry
+```
+
+Run the following command to confirm that `poetry` is installed and accessible:
+
+```powershell
+poetry --version
+
+```
+
+- NOw run
+
+```powershell
+poetry
+```
+
+**Installation**
+
+1. ~~Clone the repository:~~ (already did that)
+    
+    ```
+    ~~<!-- TODO: UPDATE TO MY  -->
+    git clone https://github.com/bhancockio/langchain-crash-course
+    cd langchain-crash-course~~
+    ```
+    
 2. Install dependencies using Poetry:
+    
+    ```
+    poetry install --no-root
+    ```
+    
 
-   ```bash
-   poetry install --no-root
-   ```
+**PROBLEM**
 
-3. Set up your environment variables:
+```powershell
+Installing google-crc32c (1.5.0): Failed
+```
 
-   - Rename the `.env.example` file to `.env` and update the variables inside with your own values. Example:
+1. Set up your environment variables:
+    - Rename the `.env.example` file to `.env` and update the variables inside with your own values. Example:
+    
+    ```
+    mv .env.example .env
+    ```
+    
+2. Activate the Poetry shell to run the examples:
+    
+    ```
+    poetry shell
+    ```
+    
+3. Run the code examples:
+    
+    ```
+     python 1_chat_models/1_chat_model_basic.py
+    ```
+    
+4. ModuleNotFoundError: No module named 'dotenv’
 
-   ```bash
-   mv .env.example .env
-   ```
+```powershell
+pip install python-dotenv
 
-4. Activate the Poetry shell to run the examples:
+```
 
-   ```bash
-   poetry shell
-   ```
+1. try to ru it again and find *ModuleNotFoundError: No module named 'langchain_openai’* **PROBLEM**
 
-5. Run the code examples:
+```powershell
+pip install langchain
+```
 
-   ```bash
-    python 1_chat_models/1_chat_model_basic.py
-   ```
+1. 
 
-## Repository Structure
+**Repository Structure**
 
 Here's a breakdown of the folders and what you'll find in each:
 
-### 1. Chat Models
+**1. Chat Models**
 
 - `1_chat_model_basic.py`
 - `2_chat_model_basic_conversation.py`
@@ -68,14 +148,14 @@ Here's a breakdown of the folders and what you'll find in each:
 
 Learn how to interact with models like ChatGPT, Claude, and Gemini.
 
-### 2. Prompt Templates
+**2. Prompt Templates**
 
 - `1_prompt_template_basic.py`
 - `2_prompt_template_with_chat_model.py`
 
 Understand the basics of prompt templates and how to use them effectively.
 
-### 3. Chains
+**3. Chains**
 
 - `1_chains_basics.py`
 - `2_chains_under_the_hood.py`
@@ -85,7 +165,7 @@ Understand the basics of prompt templates and how to use them effectively.
 
 Learn how to create chains using Chat Models and Prompts to automate tasks.
 
-### 4. RAG (Retrieval-Augmented Generation)
+**4. RAG (Retrieval-Augmented Generation)**
 
 - `1a_rag_basics.py`
 - `1b_rag_basics.py`
@@ -101,52 +181,55 @@ Learn how to create chains using Chat Models and Prompts to automate tasks.
 
 Explore the technologies like documents, embeddings, and vector stores that enable RAG queries.
 
-### 5. Agents & Tools
+**5. Agents & Tools**
 
 - `1_agent_and_tools_basics.py`
 - `agent_deep_dive/`
-  - `1_agent_react_chat.py`
-  - `2_react_docstore.py`
+    - `1_agent_react_chat.py`
+    - `2_react_docstore.py`
 - `tools_deep_dive/`
-  - `1_tool_constructor.py`
-  - `2_tool_decorator.py`
-  - `3_tool_base_tool.py`
+    - `1_tool_constructor.py`
+    - `2_tool_decorator.py`
+    - `3_tool_base_tool.py`
 
 Learn about agents, how they work, and how to build custom tools to enhance their capabilities.
 
-## How to Use This Repository
+**How to Use This Repository**
 
-1. **Watch the Video:** Start by watching the LangChain Master Class for Beginners video on YouTube at 2X speed for a high-level overview.
+1. **Watch the Video:** Start by watching the LangChain Master Class for Beginners video on YouTube at 2X speed for a high-level overview.
+2. **Run the Code Examples:** Follow along with the code examples provided in this repository. Each section in the video corresponds to a folder in this repo.
+3. **Join the Community:** If you get stuck or want to connect with other AI developers, join the FREE Skool community [here](https://www.skool.com/ai-developer-accelerator/about).
 
-2. **Run the Code Examples:** Follow along with the code examples provided in this repository. Each section in the video corresponds to a folder in this repo.
-
-3. **Join the Community:** If you get stuck or want to connect with other AI developers, join the FREE Skool community [here](https://www.skool.com/ai-developer-accelerator/about).
-
-## Comprehensive Documentation
+**Comprehensive Documentation**
 
 Each script in this repository contains detailed comments explaining the purpose and functionality of the code. This will help you understand the flow and logic behind each example.
 
-## FAQ
+**FAQ**
 
-**Q: What is LangChain?**  
+**Q: What is LangChain?**
+
 A: LangChain is a framework designed to simplify the process of building applications that utilize language models.
 
-**Q: How do I set up my environment?**  
-A: Follow the instructions in the "Getting Started" section above. Ensure you have Python 3.10 or 3.11 installed, install Poetry, clone the repository, install dependencies, rename the `.env.example` file to `.env`, and activate the Poetry shell.
+**Q: How do I set up my environment?**
 
-**Q: I am getting an error when running the examples. What should I do?**  
+A: Follow the instructions in the "Getting Started" section above. Ensure you have Python 3.10 or 3.11 installed, install Poetry, clone the repository, install dependencies, rename the `.env.example` file to `.env`, and activate the Poetry shell.
+
+**Q: I am getting an error when running the examples. What should I do?**
+
 A: Ensure all dependencies are installed correctly and your environment variables are set up properly. If the issue persists, seek help in the Skool community or open an issue on GitHub.
 
-**Q: Can I contribute to this repository?**  
+**Q: Can I contribute to this repository?**
+
 A: Yes! Contributions are welcome. Please open an issue or submit a pull request with your changes.
 
-**Q: Where can I find more information about LangChain?**  
+**Q: Where can I find more information about LangChain?**
+
 A: Check out the official LangChain documentation and join the Skool community for additional resources and support.
 
-## Support
+**Support**
 
 If you encounter any issues or have questions, feel free to open an issue on GitHub or ask for help in the Skool community.
 
-## License
+**License**
 
 This project is licensed under the MIT License.

@@ -243,10 +243,10 @@ Here's a breakdown of the folders and what you'll find in each:
 
 **1. Chat Models**
 
-- `1_chat_model_basic.py` /n
-      just we are getting a response from the gogglegenAI
+- `1_chat_model_basic.py`
+just we are getting a response from the gogglegenAI
 - `2_chat_model_basic_conversation.py`
-      having a conversation
+having a conversation
 - `3_chat_model_alternatives.py`
    ```
    pip install langchain-anthropic langchain-openai
@@ -277,6 +277,7 @@ You: exit
 
 ```
 - `5_chat_model_save_message_history_firestore.py`
+
 
 Learn how to interact with models like ChatGPT, Claude, and Gemini.
 

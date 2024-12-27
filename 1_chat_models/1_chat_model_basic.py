@@ -3,6 +3,7 @@
 from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAI
 from pydantic import SecretStr
+#The api_key is fetched from environment variables. If it's not set, an error is raised.
 import os
 
 # Load environment variables from .env
@@ -29,5 +30,7 @@ model = GoogleGenerativeAI(
 result = model.invoke("What is 81 divided by 9?")
 print("Full result:")
 print(result)
-print("Content only:")
+
+# i think this doesnt work anymore or doesnt work with gogglegeneratveai
+# print("Content only:")
 # print(result.content)

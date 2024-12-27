@@ -38,15 +38,19 @@ result = model.invoke(messages)
 print(f"Answer from AI: {result}")
 
 
-# AIMessage:
-#   Message from an AI.
-messages = [
-    SystemMessage(content="Solve the following math problems"),
-    HumanMessage(content="What is 81 divided by 9?"),
-    AIMessage(content="81 divided by 9 is 9."),
-    HumanMessage(content="What is 10 times 5?"),
-]
 
-# Invoke the model with messages
-result = model.invoke(messages)
-print(f"Answer from AI: {result}")
+
+#       ***comment out this part for a full blown conversation***
+
+# # AIMessage:
+# #   Message from an AI.
+# messages = [
+#     SystemMessage(content="Solve the following math problems"),
+#     HumanMessage(content="What is 81 divided by 9?"),
+#     AIMessage(content="81 divided by 9 is 9."),
+#     HumanMessage(content="What is 10 times 5?"),
+# ]
+
+# # Invoke the model with messages
+# result = model.invoke(messages)
+# print(f"Answer from AI: {result}")

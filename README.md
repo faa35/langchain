@@ -304,7 +304,15 @@ Steps to replicate this example:
 ![image](https://github.com/user-attachments/assets/e7ef5155-a6ce-45af-8c71-fcc154bdaa39)
 maybe unnecessary idk
 ![image](https://github.com/user-attachments/assets/98afb723-f5ae-4149-9d08-c08330af86b5)
+.
+.
+before running the file, do
+![image](https://github.com/user-attachments/assets/605e8daa-62c1-4e99-aaa7-3530d451c124)
+and then do,
+![image](https://github.com/user-attachments/assets/637fc4e8-3e78-40b4-8816-3592c57ab25f)
 
+and the dashboard
+![image](https://github.com/user-attachments/assets/a2b0d7ef-ba3f-42d6-a260-e8e1cf81f0df)
 
 
 Learn how to interact with models like ChatGPT, Claude, and Gemini.

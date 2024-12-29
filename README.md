@@ -286,6 +286,25 @@ starting from  pip install google-cloud-firestore
  pip install langchain-google-firestore
 ```
 
+Steps to replicate this example:
+1. Create a Firebase account
+2. Create a new Firebase project
+    - Copy the project ID
+3. Create a Firestore database in the Firebase project
+4. Install the Google Cloud CLI on your computer
+    - https://cloud.google.com/sdk/docs/install
+    - Authenticate the Google Cloud CLI with your Google account
+        - https://cloud.google.com/docs/authentication/provide-credentials-adc#local-dev
+    - Set your default project to the new Firebase project you created
+5. Enable the Firestore API in the Google Cloud Console:
+    - https://console.cloud.google.com/apis/enableflow?apiid=firestore.googleapis.com&project=crewai-automation
+
+
+![image](https://github.com/user-attachments/assets/08340caa-a1b8-4b6d-a973-49aaf9b4740c)
+![image](https://github.com/user-attachments/assets/e7ef5155-a6ce-45af-8c71-fcc154bdaa39)
+maybe unnecessary idk
+![image](https://github.com/user-attachments/assets/98afb723-f5ae-4149-9d08-c08330af86b5)
+
 
 
 Learn how to interact with models like ChatGPT, Claude, and Gemini.

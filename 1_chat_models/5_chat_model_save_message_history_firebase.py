@@ -3,7 +3,11 @@
 from dotenv import load_dotenv
 from google.cloud import firestore
 from langchain_google_firestore import FirestoreChatMessageHistory
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAI
+from pydantic import SecretStr
+import os
+
 
 """
 Steps to replicate this example:
@@ -17,14 +21,29 @@ Steps to replicate this example:
         - https://cloud.google.com/docs/authentication/provide-credentials-adc#local-dev
     - Set your default project to the new Firebase project you created
 5. Enable the Firestore API in the Google Cloud Console:
-    - https://console.cloud.google.com/apis/enableflow?apiid=firestore.googleapis.com&project=crewai-automation
+    - IGNORE       https://console.cloud.google.com/apis/enableflow?apiid=firestore.googleapis.com&project=crewai-automation
+    - https://console.cloud.google.com/flows/enableapi?apiid=firestore.googleapis.com
 """
 
 load_dotenv()
 
+
+# Convert API key to SecretStr
+api_key = os.getenv("GOOGLE_API_KEY")
+if api_key is None:
+    raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
+    
+secret_api_key = SecretStr(api_key)
+
+
+
+
+
+
+
 # Setup Firebase Firestore
-PROJECT_ID = "langchain-demo-abf48"
-SESSION_ID = "user_session_new"  # This could be a username or a unique ID
+PROJECT_ID = "project-ai-6a0ba"
+SESSION_ID = "user1_session"  # This could be a username or a unique ID
 COLLECTION_NAME = "chat_history"
 
 # Initialize Firestore Client
@@ -42,8 +61,16 @@ print("Chat History Initialized.")
 print("Current Chat History:", chat_history.messages)
 
 # Initialize Chat Model
-model = ChatOpenAI()
-
+# model = ChatOpenAI()
+# Create a ChatOpenAI model
+model = GoogleGenerativeAI(
+    model="gemini-1.5-pro",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+    api_key=secret_api_key  # Use SecretStr
+)
 print("Start chatting with the AI. Type 'exit' to quit.")
 
 while True:
@@ -54,6 +81,6 @@ while True:
     chat_history.add_user_message(human_input)
 
     ai_response = model.invoke(chat_history.messages)
-    chat_history.add_ai_message(ai_response.content)
+    chat_history.add_ai_message(ai_response)
 
-    print(f"AI: {ai_response.content}")
+    print(f"AI: {ai_response}")

@@ -1,3 +1,8 @@
+
+#    couldn't figure out how to solve chat anthropic problem.
+#    so we are gonna skip it
+
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_anthropic import ChatAnthropic
 from langchain_openai import ChatOpenAI
@@ -41,3 +46,5 @@ model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
 result = model.invoke(messages)
 print(f"Answer from Google: {result.content}")
+
+

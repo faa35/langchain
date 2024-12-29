@@ -297,7 +297,7 @@ Steps to replicate this example:
         - https://cloud.google.com/docs/authentication/provide-credentials-adc#local-dev
     - Set your default project to the new Firebase project you created
 5. Enable the Firestore API in the Google Cloud Console:
-    - https://console.cloud.google.com/apis/enableflow?apiid=firestore.googleapis.com&project=crewai-automation
+    - https://console.cloud.google.com/flows/enableapi?apiid=firestore.googleapis.com
 
 
 ![image](https://github.com/user-attachments/assets/08340caa-a1b8-4b6d-a973-49aaf9b4740c)

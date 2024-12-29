@@ -313,8 +313,10 @@ and then do,
 
 and the dashboard
 ![image](https://github.com/user-attachments/assets/a2b0d7ef-ba3f-42d6-a260-e8e1cf81f0df)
-
-
+running it again
+![image](https://github.com/user-attachments/assets/b831582c-3619-48d0-ae83-cbcb2113d178)
+.
+.
 Learn how to interact with models like ChatGPT, Claude, and Gemini.
 
 **2. Prompt Templates**

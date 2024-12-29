@@ -277,6 +277,15 @@ You: exit
 
 ```
 - `5_chat_model_save_message_history_firestore.py`
+![image](https://github.com/user-attachments/assets/d9258aef-6f67-47a1-86f7-7ee844ddbdb6)
+starting from  pip install google-cloud-firestore 
+```
+ pip install google-cloud-firestore 
+```
+```
+ pip install langchain-google-firestore
+```
+
 
 
 Learn how to interact with models like ChatGPT, Claude, and Gemini.

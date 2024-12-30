@@ -242,9 +242,9 @@ Learn about agents, how they work, and how to build custom tools to enhance thei
 Here's a breakdown of the folders and what you'll find in each:
 one thing to note is we are using .invoke method so that the chat model responds to us(1) and using it to create prompts(2)
 ```
-
-```
 model.invoke(messages)
+```
+
 ```
 model.invoke(prompt)
 ```
@@ -337,6 +337,10 @@ Understand the basics of prompt templates and how to use them effectively.
 
 - `1_chains_basics.py`
   ![image](https://github.com/user-attachments/assets/71f1cb6a-ab70-4f4f-b9c3-8bb2bfeb9410)
+![image](https://github.com/user-attachments/assets/8ee8c718-7cc8-4e8c-a8b0-07b07d74a1fb)
+this is mainly a better alternative for 2.2
+in one pic the differences are
+![image](https://github.com/user-attachments/assets/b85e4540-26bb-4f51-9d0d-94ae1d37c940)
 
 - `2_chains_under_the_hood.py`
 - `3_chains_extended.py`

@@ -351,6 +351,11 @@ this is just WORSE example of 3.1. In 3.1 we are doing int 1 line and here we ar
 ![image](https://github.com/user-attachments/assets/12ef0259-354a-4379-b29b-ba8d60491fd1)
 
 - `3_chains_extended.py`
+we are extending the chain(doing other functions) with the RunableLamda
+![image](https://github.com/user-attachments/assets/5d363092-b232-47c4-8c4f-ebe7dffb9f9a)
+![image](https://github.com/user-attachments/assets/469dc9c6-1065-488b-b3a0-f2828f133b4d)
+
+
 - `4_chains_parallel.py`
 - `5_chains_branching.py`
 

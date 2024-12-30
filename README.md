@@ -345,7 +345,8 @@ in one pic the differences are
 - `2_chains_under_the_hood.py`
 
   if you are new to lambda functions, see below
-![image](https://github.com/user-attachments/assets/d9564e0b-f450-4224-9de1-fa04651f3087)
+![image](https://github.com/user-attachments/assets/28a0efa9-917f-42a2-9f46-7454715c854f)
+
 
 - `3_chains_extended.py`
 - `4_chains_parallel.py`

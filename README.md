@@ -240,7 +240,14 @@ Learn about agents, how they work, and how to build custom tools to enhance thei
 **Repository Structure(NOTES)**
 
 Here's a breakdown of the folders and what you'll find in each:
+one thing to note is we are using .invoke method so that the chat model responds to us(1) and using it to create prompts(2)
+```
 
+```
+model.invoke(messages)
+```
+model.invoke(prompt)
+```
 **1. Chat Models**
 
 - `1_chat_model_basic.py`
@@ -329,6 +336,8 @@ Understand the basics of prompt templates and how to use them effectively.
 **3. Chains**
 
 - `1_chains_basics.py`
+  ![image](https://github.com/user-attachments/assets/71f1cb6a-ab70-4f4f-b9c3-8bb2bfeb9410)
+
 - `2_chains_under_the_hood.py`
 - `3_chains_extended.py`
 - `4_chains_parallel.py`

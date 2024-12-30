@@ -343,6 +343,10 @@ in one pic the differences are
 ![image](https://github.com/user-attachments/assets/b85e4540-26bb-4f51-9d0d-94ae1d37c940)
 
 - `2_chains_under_the_hood.py`
+
+  if you are new to lambda functions, see below
+![image](https://github.com/user-attachments/assets/d9564e0b-f450-4224-9de1-fa04651f3087)
+
 - `3_chains_extended.py`
 - `4_chains_parallel.py`
 - `5_chains_branching.py`

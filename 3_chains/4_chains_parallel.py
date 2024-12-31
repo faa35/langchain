@@ -2,13 +2,39 @@ from dotenv import load_dotenv
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnableParallel, RunnableLambda
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAI
+from pydantic import SecretStr
+import os
+
 
 # Load environment variables from .env
 load_dotenv()
 
+# # Create a ChatOpenAI model
+# model = ChatOpenAI(model="gpt-4o")
+
+# Convert API key to SecretStr
+api_key = os.getenv("GOOGLE_API_KEY")
+if api_key is None:
+    raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
+    
+secret_api_key = SecretStr(api_key)
+
+
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = GoogleGenerativeAI(
+    model="gemini-1.5-pro",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+    api_key=secret_api_key  # Use SecretStr
+)
+
+
+
+
 
 # Define prompt template
 prompt_template = ChatPromptTemplate.from_messages(
@@ -52,7 +78,7 @@ def combine_pros_cons(pros, cons):
     return f"Pros:\n{pros}\n\nCons:\n{cons}"
 
 
-# Simplify branches with LCEL
+# Simplify branches with LCEL(LangChain Expression Language)
 pros_branch_chain = (
     RunnableLambda(lambda x: analyze_pros(x)) | model | StrOutputParser()
 )
@@ -67,8 +93,15 @@ chain = (
     | model
     | StrOutputParser()
     | RunnableParallel(branches={"pros": pros_branch_chain, "cons": cons_branch_chain})
-    | RunnableLambda(lambda x: combine_pros_cons(x["branches"]["pros"], x["branches"]["cons"]))
+    | RunnableLambda(lambda x: combine_pros_cons(x["branches"]["pros"], x["branches"]["cons"]))  # wroks but shows problem because of GoogleGenerativeAI
 )
+
+
+
+
+
+
+
 
 # Run the chain
 result = chain.invoke({"product_name": "MacBook Pro"})

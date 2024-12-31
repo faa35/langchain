@@ -467,7 +467,7 @@ This approach can be applied in various domains:
 
 #### **e. Market Analysis:**
    - Use similar workflows to analyze competitor products and identify strengths/weaknesses in a structured manner.
-
+---
 
 - `5_chains_branching.py`
 

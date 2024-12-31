@@ -372,6 +372,7 @@ we are extending the chain(doing other functions) with the RunableLamda
    Example:
    - Pros: (list of pros)
    - Cons: (list of cons)
+![image](https://github.com/user-attachments/assets/847ca3b5-0f5c-4a9f-9b97-68a084492068)
 
 ---
 ### Example Execution and Explanation

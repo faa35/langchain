@@ -357,7 +357,23 @@ we are extending the chain(doing other functions) with the RunableLamda
 
 
 - `4_chains_parallel.py`
+### Workflow
 
+1. **Ask the chat model to list all the main features of the product.**  
+   Example: "List the main features of the product MacBook Pro."
+
+2. **Take the result (list of features) and send it back to the chat model with two parallel questions:**
+   - **Question A:** "Given these features(result), what are the pros of these features?"
+   - **Question B:** "Given these features(result), what are the cons of these features?"
+
+3. **Receive the responses for both questions (pros and cons) from the chat model.**
+
+4. **Combine the pros and cons into a final structured review.**  
+   Example:
+   - Pros: (list of pros)
+   - Cons: (list of cons)
+
+---
 ### Example Execution and Explanation
 
 Suppose we execute the chain with the product name "MacBook Pro." Here's how it would work step-by-step, followed by its practical use cases and reasoning.

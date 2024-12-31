@@ -487,6 +487,7 @@ This approach can be applied in various domains:
 ---
 
 - `5_chains_branching.py`
+![image](https://github.com/user-attachments/assets/73ab7da8-9bf7-40a7-b8de-b77a4725941a)
 
 Learn how to create chains using Chat Models and Prompts to automate tasks.
 

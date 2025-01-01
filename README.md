@@ -545,9 +545,10 @@ Here’s a simple table explaining `k` and `score_threshold` in easy words:
   - With `k=3` and `score_threshold=0.9`, only the first 2 documents (`0.95` and `0.92`) will be retrieved.
   - The rest (`0.85, 0.80, 0.78`) are excluded due to the threshold.
 
-Let me know if you’d like more clarification!
 - `2a_rag_basics_metadata.py`
+adding the source(from where the AI found that info)
 - `2b_rag_basics_metadata.py`
+no comments
 - `3_rag_text_splitting_deep_dive.py`
 - `4_rag_embedding_deep_dive.py`
 - `5_rag_retriever_deep_dive.py`

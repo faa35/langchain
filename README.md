@@ -250,18 +250,18 @@ model.invoke(prompt)
 ```
 **1. Chat Models**
 
-- `1_chat_model_basic.py`
-  just we are getting a response from the gogglegenAI
-- `2_chat_model_basic_conversation.py`
-having a conversation
+- `1_chat_model_basic.py`  
+  just we are getting a response from the gogglegenAI  
+- `2_chat_model_basic_conversation.py`  
+having a conversation  
 - `3_chat_model_alternatives.py`
    ```
    pip install langchain-anthropic langchain-openai
    ```
-   couldn't figure out how to solve chat anthropic problem.
-   so we are gonna skip it
+   couldn't figure out how to solve chat anthropic problem.  
+   so we are gonna skip it  
 - `4_chat_model_conversation_with_user.py`
-  everytime we are putting the whole chat_history to Ai for a response
+  everytime we are putting the whole chat_history to Ai for a response  
 ```
 You: hi
 AI: Hi there! How can I help you today?
@@ -285,7 +285,7 @@ You: exit
 ```
 - `5_chat_model_save_message_history_firestore.py`
 ![image](https://github.com/user-attachments/assets/d9258aef-6f67-47a1-86f7-7ee844ddbdb6)
-starting from  pip install google-cloud-firestore 
+starting from  pip install google-cloud-firestore   
 ```
  pip install google-cloud-firestore 
 ```
@@ -491,10 +491,61 @@ This approach can be applied in various domains:
 
 Learn how to create chains using Chat Models and Prompts to automate tasks.
 
-**4. RAG (Retrieval-Augmented Generation)**
-
+**4. RAG (Retrieval-Augmented Generation)**  
+**For speed and efficiency**: Use `sentence-transformers/all-MiniLM-L6-v2`.  
+**For better accuracy and results**: Upgrade to `sentence-transformers/all-mpnet-base-v2`.  
 - `1a_rag_basics.py`
+![image](https://github.com/user-attachments/assets/6296be07-c222-4658-a035-c4c6af7a291e)
+---
+![image](https://github.com/user-attachments/assets/cedd2474-c882-42de-b58a-5170a1187eb5)
+![image](https://github.com/user-attachments/assets/6c2907f0-d20b-4ec8-8711-461e2b7bf6d6)
+
+```
+pip install chromadb
+```
+if we use the code, it fails during the embedding creation step. so lets find a Different Embedding Model
+```
+pip install sentence-transformers
+
+```
+
+---
+if you are getting this
+```
+Vector store already exists. No need to initialize.
+```
+ad want to delete the vector you can do it by clicking on the `db` and delete it
+
+![image](https://github.com/user-attachments/assets/b69d1155-ce48-4d7b-a69c-d27eecb38a33)
+
 - `1b_rag_basics.py`
+---
+what does vector store look like
+![image](https://github.com/user-attachments/assets/507b4734-bb9a-424d-a477-051472657853)
+Here’s a simple table explaining `k` and `score_threshold` in easy words:
+
+| **Parameter**       | **What It Does**                                                        | **Example Value** | **What It Means**                                                                                           |
+|----------------------|-------------------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------------------------------------|
+| **`k`**             | Limits the maximum number of results (documents) to retrieve.          | `k=3`            | Retrieve only the top 3 most relevant documents.                                                           |
+| **`score_threshold`** | Sets the minimum relevance score required for a document to be included. | `score_threshold=0.9` | Only include documents with a similarity score of 90% (0.9) or higher.                                      |
+
+---
+
+### **How They Work Together**
+- **`k=3, score_threshold=0.9`**:
+  - Get up to 3 documents that are very closely related to the query (90% relevance or higher).
+  
+- **What Happens If No Document Meets the Threshold?**
+  - If no document has a similarity score above 0.9, the result will be empty.
+
+---
+
+### **Example:**
+- If there are 5 documents with scores: `0.95, 0.92, 0.85, 0.80, 0.78`:
+  - With `k=3` and `score_threshold=0.9`, only the first 2 documents (`0.95` and `0.92`) will be retrieved.
+  - The rest (`0.85, 0.80, 0.78`) are excluded due to the threshold.
+
+Let me know if you’d like more clarification!
 - `2a_rag_basics_metadata.py`
 - `2b_rag_basics_metadata.py`
 - `3_rag_text_splitting_deep_dive.py`

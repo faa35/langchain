@@ -491,7 +491,7 @@ This approach can be applied in various domains:
 
 Learn how to create chains using Chat Models and Prompts to automate tasks.
 
-**4. RAG (Retrieval-Augmented Generation)**
+**4. RAG (Retrieval-Augmented Generation)**  
 **For speed and efficiency**: Use `sentence-transformers/all-MiniLM-L6-v2`.  
 **For better accuracy and results**: Upgrade to `sentence-transformers/all-mpnet-base-v2`.  
 - `1a_rag_basics.py`

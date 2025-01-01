@@ -492,7 +492,8 @@ This approach can be applied in various domains:
 Learn how to create chains using Chat Models and Prompts to automate tasks.
 
 **4. RAG (Retrieval-Augmented Generation)**
-
+**For speed and efficiency**: Use `sentence-transformers/all-MiniLM-L6-v2`.  
+**For better accuracy and results**: Upgrade to `sentence-transformers/all-mpnet-base-v2`.  
 - `1a_rag_basics.py`
 ![image](https://github.com/user-attachments/assets/6296be07-c222-4658-a035-c4c6af7a291e)
 ---
@@ -513,12 +514,13 @@ if you are getting this
 ```
 Vector store already exists. No need to initialize.
 ```
-ad want to delete the vector you can do it by clicking on the ``db``` and delete it
+ad want to delete the vector you can do it by clicking on the `db` and delete it
 
 ![image](https://github.com/user-attachments/assets/b69d1155-ce48-4d7b-a69c-d27eecb38a33)
 
 - `1b_rag_basics.py`
-what vector store look like
+---
+what does vector store look like
 ![image](https://github.com/user-attachments/assets/507b4734-bb9a-424d-a477-051472657853)
 
 - `2a_rag_basics_metadata.py`

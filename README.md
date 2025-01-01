@@ -499,6 +499,10 @@ Learn how to create chains using Chat Models and Prompts to automate tasks.
 ![image](https://github.com/user-attachments/assets/cedd2474-c882-42de-b58a-5170a1187eb5)
 ![image](https://github.com/user-attachments/assets/6c2907f0-d20b-4ec8-8711-461e2b7bf6d6)
 
+```
+pip install chromadb
+```
+
 - `1b_rag_basics.py`
 - `2a_rag_basics_metadata.py`
 - `2b_rag_basics_metadata.py`

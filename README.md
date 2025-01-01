@@ -502,6 +502,20 @@ Learn how to create chains using Chat Models and Prompts to automate tasks.
 ```
 pip install chromadb
 ```
+if we use the code, it fails during the embedding creation step. so lets find a Different Embedding Model
+```
+pip install sentence-transformers
+
+```
+
+---
+if you are getting this
+```
+Vector store already exists. No need to initialize.
+```
+ad want to delete the vector you can do it by clicking on the ``db``` and delete it
+
+![image](https://github.com/user-attachments/assets/b69d1155-ce48-4d7b-a69c-d27eecb38a33)
 
 - `1b_rag_basics.py`
 - `2a_rag_basics_metadata.py`

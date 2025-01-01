@@ -250,18 +250,18 @@ model.invoke(prompt)
 ```
 **1. Chat Models**
 
-- `1_chat_model_basic.py`
-  just we are getting a response from the gogglegenAI
-- `2_chat_model_basic_conversation.py`
-having a conversation
+- `1_chat_model_basic.py`  
+  just we are getting a response from the gogglegenAI  
+- `2_chat_model_basic_conversation.py`  
+having a conversation  
 - `3_chat_model_alternatives.py`
    ```
    pip install langchain-anthropic langchain-openai
    ```
-   couldn't figure out how to solve chat anthropic problem.
-   so we are gonna skip it
+   couldn't figure out how to solve chat anthropic problem.  
+   so we are gonna skip it  
 - `4_chat_model_conversation_with_user.py`
-  everytime we are putting the whole chat_history to Ai for a response
+  everytime we are putting the whole chat_history to Ai for a response  
 ```
 You: hi
 AI: Hi there! How can I help you today?
@@ -285,7 +285,7 @@ You: exit
 ```
 - `5_chat_model_save_message_history_firestore.py`
 ![image](https://github.com/user-attachments/assets/d9258aef-6f67-47a1-86f7-7ee844ddbdb6)
-starting from  pip install google-cloud-firestore 
+starting from  pip install google-cloud-firestore   
 ```
  pip install google-cloud-firestore 
 ```

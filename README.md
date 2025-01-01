@@ -518,6 +518,9 @@ ad want to delete the vector you can do it by clicking on the ``db``` and delete
 ![image](https://github.com/user-attachments/assets/b69d1155-ce48-4d7b-a69c-d27eecb38a33)
 
 - `1b_rag_basics.py`
+what vector store look like
+![image](https://github.com/user-attachments/assets/507b4734-bb9a-424d-a477-051472657853)
+
 - `2a_rag_basics_metadata.py`
 - `2b_rag_basics_metadata.py`
 - `3_rag_text_splitting_deep_dive.py`

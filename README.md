@@ -495,6 +495,9 @@ Learn how to create chains using Chat Models and Prompts to automate tasks.
 
 - `1a_rag_basics.py`
 ![image](https://github.com/user-attachments/assets/6296be07-c222-4658-a035-c4c6af7a291e)
+---
+![image](https://github.com/user-attachments/assets/cedd2474-c882-42de-b58a-5170a1187eb5)
+![image](https://github.com/user-attachments/assets/6c2907f0-d20b-4ec8-8711-461e2b7bf6d6)
 
 - `1b_rag_basics.py`
 - `2a_rag_basics_metadata.py`

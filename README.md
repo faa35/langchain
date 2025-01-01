@@ -522,7 +522,30 @@ ad want to delete the vector you can do it by clicking on the `db` and delete it
 ---
 what does vector store look like
 ![image](https://github.com/user-attachments/assets/507b4734-bb9a-424d-a477-051472657853)
+Here’s a simple table explaining `k` and `score_threshold` in easy words:
 
+| **Parameter**       | **What It Does**                                                        | **Example Value** | **What It Means**                                                                                           |
+|----------------------|-------------------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------------------------------------|
+| **`k`**             | Limits the maximum number of results (documents) to retrieve.          | `k=3`            | Retrieve only the top 3 most relevant documents.                                                           |
+| **`score_threshold`** | Sets the minimum relevance score required for a document to be included. | `score_threshold=0.9` | Only include documents with a similarity score of 90% (0.9) or higher.                                      |
+
+---
+
+### **How They Work Together**
+- **`k=3, score_threshold=0.9`**:
+  - Get up to 3 documents that are very closely related to the query (90% relevance or higher).
+  
+- **What Happens If No Document Meets the Threshold?**
+  - If no document has a similarity score above 0.9, the result will be empty.
+
+---
+
+### **Example:**
+- If there are 5 documents with scores: `0.95, 0.92, 0.85, 0.80, 0.78`:
+  - With `k=3` and `score_threshold=0.9`, only the first 2 documents (`0.95` and `0.92`) will be retrieved.
+  - The rest (`0.85, 0.80, 0.78`) are excluded due to the threshold.
+
+Let me know if you’d like more clarification!
 - `2a_rag_basics_metadata.py`
 - `2b_rag_basics_metadata.py`
 - `3_rag_text_splitting_deep_dive.py`

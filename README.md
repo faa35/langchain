@@ -549,7 +549,20 @@ Here’s a simple table explaining `k` and `score_threshold` in easy words:
 adding the source(from where the AI found that info)
 - `2b_rag_basics_metadata.py`  
 no comments
-- `3_rag_text_splitting_deep_dive.py`
+- `3_rag_text_splitting_deep_dive.py`  
+`chunk_size=1000`: Each chunk will have up to 1000 characters.  
+`chunk_overlap=100`: Each chunk overlaps with the next one by 100 characters. This overlap ensures that important context isn't lost between chunks.
+
+
+| **Splitting Method**          | **What It Does**                                                                                  | **When to Use It**                                                                             |
+|--------------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **Character-based Splitting** | Cuts text into chunks of a fixed number of characters.                                             | Use when you want chunks of the same size, no matter where the sentences or paragraphs end.   |
+| **Sentence-based Splitting**  | Breaks text into chunks, making sure each chunk ends at a complete sentence.(we are gonna look for full stops)                    | Use when you want each chunk to make sense as a full idea or sentence.                        |
+| **Token-based Splitting**     | Splits text into chunks based on words or smaller parts (tokens), using a tokenizer.              | Use when working with AI models that limit how many tokens (words) you can use at one time.   |
+| **Recursive Character-based Splitting** | Tries to break text at natural places (like sentences or paragraphs) but stays within a size limit.               | Use when you want to balance between keeping chunks meaningful and keeping them small.         |
+| **Custom Splitting**          | Lets you make your own rules for splitting text, like splitting by paragraphs or custom markers.   | Use when your text has a special format that other methods don’t handle well.                 |
+
+
 - `4_rag_embedding_deep_dive.py`
 - `5_rag_retriever_deep_dive.py`
 - `6_rag_one_off_question.py`

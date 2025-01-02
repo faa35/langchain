@@ -550,10 +550,9 @@ adding the source(from where the AI found that info)
 - `2b_rag_basics_metadata.py`  
 no comments
 - `3_rag_text_splitting_deep_dive.py`  
-`chunk_size=1000`: Each chunk will have up to 1000 characters.
+`chunk_size=1000`: Each chunk will have up to 1000 characters.  
 `chunk_overlap=100`: Each chunk overlaps with the next one by 100 characters. This overlap ensures that important context isn't lost between chunks.
 
-Here’s the table in simpler and more user-friendly words:
 
 | **Splitting Method**          | **What It Does**                                                                                  | **When to Use It**                                                                             |
 |--------------------------------|---------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|

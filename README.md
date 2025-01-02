@@ -559,12 +559,33 @@ no comments
 | **Character-based Splitting** | Cuts text into chunks of a fixed number of characters.                                             | Use when you want chunks of the same size, no matter where the sentences or paragraphs end.   |
 | **Sentence-based Splitting**  | Breaks text into chunks, making sure each chunk ends at a complete sentence.(we are gonna look for full stops)                    | Use when you want each chunk to make sense as a full idea or sentence.                        |
 | **Token-based Splitting**     | Splits text into chunks based on words or smaller parts (tokens), using a tokenizer.              | Use when working with AI models that limit how many tokens (words) you can use at one time.   |
-| **Recursive Character-based Splitting** | Tries to break text at natural places (like sentences or paragraphs) but stays within a size limit.               | Use when you want to balance between keeping chunks meaningful and keeping them small.         |
+| **Recursive Character-based Splitting** (most used) | Tries to break text at natural places (like sentences or paragraphs) but stays within a size limit.               | Use when you want to balance between keeping chunks meaningful and keeping them small.         |
 | **Custom Splitting**          | Lets you make your own rules for splitting text, like splitting by paragraphs or custom markers.   | Use when your text has a special format that other methods don’t handle well.                 |
 
 
-- `4_rag_embedding_deep_dive.py`
-- `5_rag_retriever_deep_dive.py`
+- `4_rag_embedding_deep_dive.py`  
+here, we showed the implementations of other text embeddings and models  
+(so NO CHANGES IN THE CODE)  
+    - OpenAIEmbeddings(model="text-embedding-ada-002")  
+    - HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+---
+```query_vector_store("chroma_db_with_metadata",    query,         embedding_function,     "similarity",       {"k": 3})```  
+```                    name of the vector store,    our question,  embedding models,        search type,       search type's parameter```
+- `5_rag_retriever_deep_dive.py`  
+This example focuses on exploring how to fine-tune and customize search methods in **retrievers** for retrieving documents from **vector stores**. By the end, you'll learn:
+
+1. How to adjust search parameters in retrievers.
+2. How different types of search queries work.
+3. How fine-tuning these parameters impacts search results.
+
+The goal is to understand and compare the results of various search approaches.
+
+| Name                          | What                                                                                           | Code                                                                                                                                       | Code Parameters Description                                                                                       |
+|-------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| Similarity Search             | Retrieves documents based on vector similarity, finding the most similar ones to the query.    | `query_vector_store("chroma_db_with_metadata", query, embedding_function, "similarity", {"k": 3})`                                        | `"k": Number of top similar documents to retrieve.`                                                             |
+| Max Marginal Relevance (MMR)  | Balances relevance to the query with diversity among retrieved documents to avoid redundancy.  | `query_vector_store("chroma_db_with_metadata", query, embedding_function, "mmr", {"k": 3, "fetch_k": 20, "lambda_mult": 0.5})`           | `"k": Number of documents to retrieve.`<br>`"fetch_k": Number of documents fetched initially for diversity.`<br>`"lambda_mult": Diversity control (1 for minimum diversity, 0 for maximum).` |
+| Similarity Score Threshold    | Retrieves only documents that exceed a specified similarity score threshold.                  | `query_vector_store("chroma_db_with_metadata", query, embedding_function, "similarity_score_threshold", {"k": 3, "score_threshold": 0.1})` | `"k": Number of documents to retrieve.`<br>`"score_threshold": Minimum similarity score for relevance.`          |
+
 - `6_rag_one_off_question.py`
 - `7_rag_conversational.py`
 - `8_rag_web_scrape_firecrawl.py`

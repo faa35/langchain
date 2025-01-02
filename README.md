@@ -587,7 +587,9 @@ The goal is to understand and compare the results of various search approaches.
 | Similarity Score Threshold    | Retrieves only documents that exceed a specified similarity score threshold.                  | `query_vector_store("chroma_db_with_metadata", query, embedding_function, "similarity_score_threshold", {"k": 3, "score_threshold": 0.1})` | `"k": Number of documents to retrieve.`<br>`"score_threshold": Minimum similarity score for relevance.`          |
 
 - `6_rag_one_off_question.py`
-- `7_rag_conversational.py`
+Finally, we are passing the question to the chat model
+- `7_rag_conversational.py`  
+full conversation with the RAG data
 - `8_rag_web_scrape_firecrawl.py`
 - `8_rag_web_scrape.py`
 

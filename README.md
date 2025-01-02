@@ -568,7 +568,14 @@ here, we showed the implementations of other text embeddings and models
 (so NO CHANGES IN THE CODE)  
     - OpenAIEmbeddings(model="text-embedding-ada-002")  
     - HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-- `5_rag_retriever_deep_dive.py`
+- `5_rag_retriever_deep_dive.py`  
+This example focuses on exploring how to fine-tune and customize search methods in **retrievers** for retrieving documents from **vector stores**. By the end, you'll learn:
+
+1. How to adjust search parameters in retrievers.
+2. How different types of search queries work.
+3. How fine-tuning these parameters impacts search results.
+
+The goal is to understand and compare the results of various search approaches.
 - `6_rag_one_off_question.py`
 - `7_rag_conversational.py`
 - `8_rag_web_scrape_firecrawl.py`

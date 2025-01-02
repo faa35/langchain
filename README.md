@@ -569,8 +569,8 @@ here, we showed the implementations of other text embeddings and models
     - OpenAIEmbeddings(model="text-embedding-ada-002")  
     - HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 ---
-```query_vector_store("chroma_db_with_metadata",      query, embedding_function,     "similarity", {"k": 3})```  
-```                    name of the vector store,          our question, embedding models, search type, search type's parameter```
+```query_vector_store("chroma_db_with_metadata",    query,         embedding_function,     "similarity",       {"k": 3})```  
+```                    name of the vector store,    our question,  embedding models,        search type,       search type's parameter```
 - `5_rag_retriever_deep_dive.py`  
 This example focuses on exploring how to fine-tune and customize search methods in **retrievers** for retrieving documents from **vector stores**. By the end, you'll learn:
 

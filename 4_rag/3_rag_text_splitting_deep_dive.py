@@ -9,7 +9,8 @@ from langchain.text_splitter import (
 )
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 
 # Define the directory containing the text file
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -23,13 +24,16 @@ if not os.path.exists(file_path):
     )
 
 # Read the text content from the file
-loader = TextLoader(file_path)
+loader = TextLoader(file_path, encoding="utf-8")
 documents = loader.load()
 
 # Define the embedding model
-embeddings = OpenAIEmbeddings(
-    model="text-embedding-3-small"
-)  # Update to a valid embedding model if needed
+# embeddings = OpenAIEmbeddings(
+#     model="text-embedding-3-small"
+# )  # Update to a valid embedding model if needed
+embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")  # Choose your model
+
+
 
 
 # Function to create and persist vector store
@@ -38,7 +42,7 @@ def create_vector_store(docs, store_name):
     if not os.path.exists(persistent_directory):
         print(f"\n--- Creating vector store {store_name} ---")
         db = Chroma.from_documents(
-            docs, embeddings, persist_directory=persistent_directory
+            docs, embedding=embedding_function, persist_directory=persistent_directory
         )
         print(f"--- Finished creating vector store {store_name} ---")
     else:
@@ -88,7 +92,8 @@ print("\n--- Using Custom Splitting ---")
 class CustomTextSplitter(TextSplitter):
     def split_text(self, text):
         # Custom logic for splitting text
-        return text.split("\n\n")  # Example: split by paragraphs
+        return text.split("\n\n")  # this means 2 new lines, so after that we are assuming
+                                   # a new paragraph is begining and are gonna split by paragraphs
 
 
 custom_splitter = CustomTextSplitter()
@@ -102,7 +107,7 @@ def query_vector_store(store_name, query):
     if os.path.exists(persistent_directory):
         print(f"\n--- Querying the Vector Store {store_name} ---")
         db = Chroma(
-            persist_directory=persistent_directory, embedding_function=embeddings
+            persist_directory=persistent_directory, embedding_function=embedding_function
         )
         retriever = db.as_retriever(
             search_type="similarity_score_threshold",

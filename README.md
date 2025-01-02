@@ -559,11 +559,12 @@ no comments
 | **Character-based Splitting** | Cuts text into chunks of a fixed number of characters.                                             | Use when you want chunks of the same size, no matter where the sentences or paragraphs end.   |
 | **Sentence-based Splitting**  | Breaks text into chunks, making sure each chunk ends at a complete sentence.(we are gonna look for full stops)                    | Use when you want each chunk to make sense as a full idea or sentence.                        |
 | **Token-based Splitting**     | Splits text into chunks based on words or smaller parts (tokens), using a tokenizer.              | Use when working with AI models that limit how many tokens (words) you can use at one time.   |
-| **Recursive Character-based Splitting** | Tries to break text at natural places (like sentences or paragraphs) but stays within a size limit.               | Use when you want to balance between keeping chunks meaningful and keeping them small.         |
+| **Recursive Character-based Splitting** (most used) | Tries to break text at natural places (like sentences or paragraphs) but stays within a size limit.               | Use when you want to balance between keeping chunks meaningful and keeping them small.         |
 | **Custom Splitting**          | Lets you make your own rules for splitting text, like splitting by paragraphs or custom markers.   | Use when your text has a special format that other methods don’t handle well.                 |
 
 
 - `4_rag_embedding_deep_dive.py`
+here, we showed the implementations of other text embeddings and models 
 - `5_rag_retriever_deep_dive.py`
 - `6_rag_one_off_question.py`
 - `7_rag_conversational.py`

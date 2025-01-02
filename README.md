@@ -563,7 +563,7 @@ no comments
 | **Custom Splitting**          | Lets you make your own rules for splitting text, like splitting by paragraphs or custom markers.   | Use when your text has a special format that other methods don’t handle well.                 |
 
 
-- `4_rag_embedding_deep_dive.py`
+- `4_rag_embedding_deep_dive.py`  
 here, we showed the implementations of other text embeddings and models 
 - `5_rag_retriever_deep_dive.py`
 - `6_rag_one_off_question.py`

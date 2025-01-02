@@ -3,7 +3,13 @@ import os
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+# from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
+
+from langchain_google_genai import GoogleGenerativeAI
+from pydantic import SecretStr
+import os
+
 
 # Load environment variables from .env
 load_dotenv()
@@ -14,11 +20,13 @@ persistent_directory = os.path.join(
     current_dir, "db", "chroma_db_with_metadata")
 
 # Define the embedding model
-embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+# embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")  # Choose your model
+
 
 # Load the existing vector store with the embedding function
 db = Chroma(persist_directory=persistent_directory,
-            embedding_function=embeddings)
+            embedding_function=embedding_function)
 
 # Define the user's question
 query = "How can I learn more about LangChain?"
@@ -44,8 +52,32 @@ combined_input = (
     + "\n\nPlease provide an answer based only on the provided documents. If the answer is not found in the documents, respond with 'I'm not sure'."
 )
 
+## Create a ChatOpenAI model
+# model = ChatOpenAI(model="gpt-4o")
+# Convert API key to SecretStr
+api_key = os.getenv("GOOGLE_API_KEY")
+if api_key is None:
+    raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
+    
+secret_api_key = SecretStr(api_key)
+
+
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = GoogleGenerativeAI(
+    model="gemini-1.5-pro",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+    api_key=secret_api_key  # Use SecretStr
+)
+
+# Convert API key to SecretStr
+api_key = os.getenv("GOOGLE_API_KEY")
+if api_key is None:
+    raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
+
+
 
 # Define the messages for the model
 messages = [
@@ -58,7 +90,6 @@ result = model.invoke(messages)
 
 # Display the full result and content only
 print("\n--- Generated Response ---")
-# print("Full result:")
-# print(result)
-print("Content only:")
-print(result.content)
+print("Full result:")
+
+print(result)

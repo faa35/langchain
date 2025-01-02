@@ -2,7 +2,8 @@ import os
 
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 
 load_dotenv()
 
@@ -12,11 +13,13 @@ db_dir = os.path.join(current_dir, "db")
 persistent_directory = os.path.join(db_dir, "chroma_db_with_metadata")
 
 # Define the embedding model
-embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+# embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+embedding_function = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")  # Choose your model
 
-# Load the existing vector store with the embedding function
+
+# Load the **existing vector** store with the embedding function
 db = Chroma(persist_directory=persistent_directory,
-            embedding_function=embeddings)
+            embedding_function=embedding_function)
 
 
 # Function to query a vector store with different search types and parameters
@@ -55,7 +58,7 @@ query = "How did Juliet die?"
 # Use this when you want to retrieve the top k most similar documents.
 print("\n--- Using Similarity Search ---")
 query_vector_store("chroma_db_with_metadata", query,
-                   embeddings, "similarity", {"k": 3})
+                   embedding_function, "similarity", {"k": 3})
 
 # 2. Max Marginal Relevance (MMR)
 # This method balances between selecting documents that are relevant to the query and diverse among themselves.
@@ -69,7 +72,7 @@ print("\n--- Using Max Marginal Relevance (MMR) ---")
 query_vector_store(
     "chroma_db_with_metadata",
     query,
-    embeddings,
+    embedding_function,
     "mmr",
     {"k": 3, "fetch_k": 20, "lambda_mult": 0.5},
 )
@@ -82,7 +85,7 @@ print("\n--- Using Similarity Score Threshold ---")
 query_vector_store(
     "chroma_db_with_metadata",
     query,
-    embeddings,
+    embedding_function,
     "similarity_score_threshold",
     {"k": 3, "score_threshold": 0.1},
 )

@@ -72,10 +72,7 @@ model = GoogleGenerativeAI(
     api_key=secret_api_key  # Use SecretStr
 )
 
-# Convert API key to SecretStr
-api_key = os.getenv("GOOGLE_API_KEY")
-if api_key is None:
-    raise ValueError("GOOGLE_API_KEY is not set in the environment variables.")
+
 
 
 

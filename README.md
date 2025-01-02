@@ -564,7 +564,7 @@ no comments
 
 
 - `4_rag_embedding_deep_dive.py`  
-here, we showed the implementations of other text embeddings and models
+here, we showed the implementations of other text embeddings and models  
 (so NO CHANGES IN THE CODE)  
     - OpenAIEmbeddings(model="text-embedding-ada-002")  
     - HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")

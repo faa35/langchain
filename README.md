@@ -590,6 +590,8 @@ The goal is to understand and compare the results of various search approaches.
 Finally, we are passing the question to the chat model
 - `7_rag_conversational.py`  
 full conversation with the RAG data
+![image](https://github.com/user-attachments/assets/bb5c786e-da6d-4de5-b6b1-c17641fb94b4)
+
 - `8_rag_web_scrape_firecrawl.py`
 - `8_rag_web_scrape.py`
 

@@ -592,6 +592,10 @@ Finally, we are passing the question to the chat model
 full conversation with the RAG data
 ![image](https://github.com/user-attachments/assets/bb5c786e-da6d-4de5-b6b1-c17641fb94b4)
 
+![image](https://github.com/user-attachments/assets/d4f8c9dc-fdba-44f0-a20d-d27f1e58c4c9)
+
+![image](https://github.com/user-attachments/assets/7619bc3a-9f12-4e4b-8213-8c1d8cad41cc)
+
 - `8_rag_web_scrape_firecrawl.py`
 - `8_rag_web_scrape.py`
 

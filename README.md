@@ -683,9 +683,15 @@ A: Yes! Contributions are welcome. Please open an issue or submit a pull request
 
 A: Check out the official LangChain documentation and join the Skool community for additional resources and support.
 
-**Support**
+---
 
-If you encounter any issues or have questions, feel free to open an issue on GitHub or ask for help in the Skool community.
+## Credits  
+
+This project is based on a course by **Brandon**. But I have done this project with GEMINI API and he used OPEN AI API
+Based on this course "LangChain Master Class For Beginners 2024 [+20 Examples, LangChain V0.2]"  
+https://www.youtube.com/watch?v=yF9kGESAi3M&t=8079s
+
+---
 
 **License**
 
